@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glamour Beauty - Premium Makeup Collection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Glamour Beauty</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Discover Your Perfect Look</h1>
+            <p>Premium makeup collection for the modern woman. Enhance your natural beauty with our carefully curated products.</p>
+            <button class="cta-button" onclick="scrollToSection('products')">Shop Now</button>
+        </div>
+        
+        <div class="hero-video">
+    <video autoplay muted loop playsinline preload="none" poster="/web 1/img/home-bg-1.jpg">
+      <source src="/web 1/img/8955660-uhd_3840_2160_24fps.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-section">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <img src="/web 1/img/category-1.png" alt="Lipstick Collection">
+                    <h3>Signature Lipsticks</h3>
+                    <p>Long-lasting, vibrant colors</p>
+                </div>
+                <div class="featured-card">
+                    <img src="/web 1/img/category-2.png" alt="Eyeshadow Palette">
+                    <h3>Eyeshadow Palettes</h3>
+                    <p>Professional-grade pigments</p>
+                </div>
+                <div class="featured-card">
+                    <img src="/web 1/img/category-3.png" alt="Foundation Collection">
+                    <h3>Foundation Range</h3>
+                    <p>Perfect match for every skin tone</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2>Our Products</h2>
+            
+            <!-- Product Filters -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Products</button>
+                <button class="filter-btn" data-filter="lips">Lips</button>
+                <button class="filter-btn" data-filter="eyes">Eyes</button>
+                <button class="filter-btn" data-filter="face">Face</button>
+                <button class="filter-btn" data-filter="tools">Tools</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid">
+                <!-- Lips Products -->
+                <div class="product-card" data-category="lips">
+                    <div class="product-image">
+                        <img src="/web 1/img/category-4.png" alt="Matte Red Lipstick" loading="lazy" decoding="async">
+                        <div class="product-overlay">
+                            <button class="add-to-cart" onclick="addToCart(1, 'Matte Red Lipstick', 24.99, '/placeholder.svg?height=250&width=250')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Matte Red Lipstick</h3>
+                        <p class="price">$24.99</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="lips">
+                    <div class="product-image">
+                        <img src="/web 1/img/category-5.png" alt="Glossy Pink Lipstick" loading="lazy" decoding="async">
+                        <div class="product-overlay">
+                            <button class="add-to-cart" onclick="addToCart(2, 'Glossy Pink Lipstick', 22.99, '/placeholder.svg?height=250&width=250')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Glossy Pink Lipstick</h3>
+                        <p class="price">$22.99</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eyes Products -->
+                <div class="product-card" data-category="eyes">
+                    <div class="product-image">
+                        <img src="/web 1/img/category-6.png" alt="Neutral Eyeshadow Palette" loading="lazy" decoding="async">
+                        <div class="product-overlay">
+                            <button class="add-to-cart" onclick="addToCart(3, 'Neutral Eyeshadow Palette', 45.99, '/placeholder.svg?height=250&width=250')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Neutral Eyeshadow Palette</h3>
+                        <p class="price">$45.99</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="eyes">
+                    <div class="product-image">
+                        <img src="/web 1/img/gallery-img-2.jpeg" alt="Volume Mascara" loading="lazy" decoding="async">
+                        <div class="product-overlay">
+                            <button class="add-to-cart" onclick="addToCart(4, 'Volume Mascara', 28.99, '/placeholder.svg?height=250&width=250')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Volume Mascara</h3>
+                        <p class="price">$28.99</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Face Products -->
+                <div class="product-card" data-category="face">
+                    <div class="product-image">
+                        <img src="/web 1/img/gallery-img-3.jpeg" alt="Liquid Foundation" loading="lazy" decoding="async">
+                        <div class="product-overlay">
+                            <button class="add-to-cart" onclick="addToCart(5, 'Liquid Foundation', 38.99, '/placeholder.svg?height=250&width=250')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Liquid Foundation</h3>
+                        <p class="price">$38.99</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="face">
+                    <div class="product-image">
+                        <img src="/web 1/img/gallery-img-4.jpeg" alt="Blush Compact" loading="lazy" decoding="async">
+                        <div class="product-overlay">
+                            <button class="add-to-cart" onclick="addToCart(6, 'Blush Compact', 26.99, '/placeholder.svg?height=250&width=250')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Blush Compact</h3>
+                        <p class="price">$26.99</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools Products -->
+                <div class="product-card" data-category="tools">
+                    <div class="product-image">
+                        <img src="/web 1/img/gallery-img-5.jpeg" alt="Professional Brush Set" loading="lazy" decoding="async">
+                        <div class="product-overlay">
+                            <button class="add-to-cart" onclick="addToCart(7, 'Professional Brush Set', 65.99, '/placeholder.svg?height=250&width=250')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Professional Brush Set</h3>
+                        <p class="price">$65.99</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="tools">
+                    <div class="product-image">
+                        <img src="/web 1/img/category-1.png" alt="Beauty Sponge" loading="lazy" decoding="async">
+                        <div class="product-overlay">
+                            <button class="add-to-cart" onclick="addToCart(8, 'Beauty Sponge', 12.99, '/placeholder.svg?height=250&width=250')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Beauty Sponge</h3>
+                        <p class="price">$12.99</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Glamour Beauty</h2>
+                    <p>Founded in 2020, Glamour Beauty has been dedicated to providing high-quality makeup products that enhance your natural beauty. Our carefully curated collection features the latest trends and timeless classics.</p>
+                    <p>We believe that makeup is an art form and a way to express your unique personality. That's why we work with top manufacturers to bring you products that are not only beautiful but also safe and long-lasting.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>50K+</h3>
+                            <p>Happy Customers</p>
+                        </div>
+                        <div class="stat">
+                            <h3>200+</h3>
+                            <p>Products</p>
+                        </div>
+                        <div class="stat">
+                            <h3>5★</h3>
+                            <p>Average Rating</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="/web 1/img/amir-seilsepour-VLJV46hPLSM-unsplash.jpg" alt="Professional makeup artist" loading="lazy" decoding="async">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>123 Beauty Street, Glamour City, GC 12345</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+971 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>hello@glamourbeauty.com</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: $<span id="cartTotal">0.00</span></strong>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Glamour Beauty</h3>
+                    <p>Your trusted partner in beauty and self-expression.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for updates and exclusive offers</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Your email">
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Glamour Beauty. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./main.js"></script>
+</body>
+</html>
